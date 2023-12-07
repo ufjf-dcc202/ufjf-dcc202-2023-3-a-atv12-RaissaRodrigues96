@@ -1,9 +1,9 @@
-//main.js
+import { getEstoque, transacaoNoEstoque, limpaEstoque } from "./estoque";
+
+const olJoao = document.querySelector("#Joao");
+const olMaria = document.querySelector("#Maria");
 
 document.entrada.addEventListener('submit', leFormulario);
-
-const olJoao = document.querySelector("#olJoao");
-const olMaria = document.querySelector("#olMaria");
 
 function leFormulario(event){
     event.preventDefault();
