@@ -5,6 +5,15 @@ const olMaria = document.querySelector("#Maria");
 
 document.entrada.addEventListener('submit', leFormulario);
 
+document.addEventListener('DOMContentLoaded'){
+    document.getElementById('buttonLimpaLista').addEventListener('click') {
+        limpaEstoque();
+        atualizaTela();
+    }
+}
+
+atualizaTela();
+
 function leFormulario(event){
     event.preventDefault();
     const fruta = document.entrada.fruta.value;
