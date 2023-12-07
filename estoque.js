@@ -5,8 +5,8 @@ let estoque = {
     'maria': [{'tipo':"maca", 'qtd': 2}, {'tipo':"banana", 'qtd': 4},],
   };
   
-  export function getEstoque(){
-    return structuredClone(estoque);
+function getEstoque(){
+    return estoque;
   }
   
   //export {getEstoque}
