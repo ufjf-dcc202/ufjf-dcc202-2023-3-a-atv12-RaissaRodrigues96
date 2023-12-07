@@ -23,6 +23,16 @@
                     <label><input type="radio" name="destino" value="joao"/>Joao</label>
                     <label><input type="radio" name="destino" value="maria" checked/>Maria</label>
                 </fieldset>
+                <label for="ifruta">Fruta: </label>
+                <select id="ifruta" name="fruta">
+                    <option value="maca">Maça</option>
+                    <option value="pera">Pera</option>
+                    <option value="banana">Banana</option>
+                    <option value="uva">Uva</option>
+                </select>
+                <label for="quantidade">Quantidade: </label>
+                <input id="quantidade" type="number" name="quantidade" min="0" max="12" step="1">
+                <button type="submit">Enviar</button>
             </form>
         </section>
     </main>
