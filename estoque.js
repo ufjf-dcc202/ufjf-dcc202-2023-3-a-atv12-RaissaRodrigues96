@@ -21,6 +21,31 @@ function getEstoque(){
     if (quantidade < 0){
         return;
     }
+
+    else if(origem === destino){
+        return;
+    }
+
+    else if(destino === "pomar"){
+        let itemEncontrado = estoque[origem].find(item => item.tipo === tipo);
+
+        if(itemEncontrado){
+            if(itemEncontrado.quantidade >= quantidade){
+                itemEncontrado.quantidade = itemEncontrado.quantidade - quantidade;
+            }else{
+                itemEncontrado.quantidade = 0;
+            }
+        }else{
+            return;
+        }
+        return;
+    }
   }
+
+  else if(origem === "pomar"){
+    const itemEncontrado = estoque[destino].find(item => item.tipo === tipo);
+  }
+
+
   
   //export {getEstoque}
