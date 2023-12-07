@@ -15,11 +15,15 @@ document.addEventListener('DOMContentLoaded'){
 atualizaTela();
 
 function leFormulario(event){
-    event.preventDefault();
+    event.preventDefault(event);
+    const quantidade = document.entrada.quantidade.valueAsNumber;
     const fruta = document.entrada.fruta.value;
-    const quantidade = document.entrada.quantidade.value;
+    const origem = document.entrada.origem.value;
+    const destino = document.entrada.destino.value;
 
-    console.log(`fruta: ${fruta} qtd: ${quantidade}`);
+    console.log(`${origem} doa ${quantidade} ${fruta} para ${destino}`);
 
-    //document.entrada.submit();
+    transacaoNoEstoque(origem, destino, fruta, quantidade);
+
+    atualizaTela();
 }
