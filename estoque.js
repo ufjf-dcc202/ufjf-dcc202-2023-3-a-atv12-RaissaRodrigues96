@@ -42,7 +42,7 @@ function getEstoque(){
     }
   }
 
-  else if(origem === "pomar"){
+   else if(origem === "pomar"){
     const itemEncontrado = estoque[destino].find(item => item.tipo === tipo);
 
     if (itemEncontrado){
