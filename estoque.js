@@ -10,7 +10,17 @@ function getEstoque(){
   }
 
   function limpaEstoque() {
-    
+    estoque = {};
+    estoque = {
+        'joao': [],
+        'maria': []
+    }
+  }
+
+  function transacaoNoEstoque (origem,destino, tipo, quantidade){
+    if (quantidade < 0){
+        return;
+    }
   }
   
   //export {getEstoque}
