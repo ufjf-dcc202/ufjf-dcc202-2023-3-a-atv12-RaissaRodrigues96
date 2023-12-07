@@ -37,3 +37,13 @@ function preencheLista(lista, estoqueDaPessoa){
         lista.appendChild(li);
     }
 }
+
+function atualizaTela(){
+    const estoque = getEstoque();
+
+    olJoao.innerHTML = "";
+    olMaria.innerHTML = "";
+
+    preencheLista(olJoao, estoque.joao);
+    preencheLista(olMaria, estoque.maria);
+}
