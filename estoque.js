@@ -8,5 +8,9 @@ let estoque = {
 function getEstoque(){
     return estoque;
   }
+
+  function limpaEstoque() {
+    
+  }
   
   //export {getEstoque}
