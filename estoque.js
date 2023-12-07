@@ -62,6 +62,25 @@ function getEstoque(){
     }
   }
 
+  else if(itemOrigem.quantidade < quantidade){
+    if(itemDestino){
+        itemDestino.quantidade += itemOrigem.quantidade;
+    }else {
+        estoque[destino].push({ tipo: tipo, quantidade: itemOrigem.quantidade });
+    }
+    itemOrigem.quantidade = 0;
+  }
 
+  else {
+    if(itemDestino){
+        itemDestino.quantidade += quantidade;
+    }else{
+        estoque[destino].push({ tipo, quantidade });
+    }
+    itemOrigem.quantidade = itemOrigem.quantidade - quantidade;
+  }
+return;
+
+export { getEstoque, transacaoNoEstoque, limpaEstoque };
   
   //export {getEstoque}
