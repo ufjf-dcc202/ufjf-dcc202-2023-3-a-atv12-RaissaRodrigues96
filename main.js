@@ -5,12 +5,12 @@ const olMaria = document.querySelector("#Maria");
 
 document.entrada.addEventListener('submit', leFormulario);
 
-document.addEventListener('DOMContentLoaded'){
-    document.getElementById('buttonLimpaLista').addEventListener('click') {
+document.addEventListener('DOMContentLoaded' , () => {
+    document.getElementById('buttonLimpaLista').addEventListener('click', () => {
         limpaEstoque();
         atualizaTela();
-    }
-}
+    });
+});
 
 atualizaTela();
 
