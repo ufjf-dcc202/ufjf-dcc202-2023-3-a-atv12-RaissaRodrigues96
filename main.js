@@ -1,49 +1,41 @@
-import { getEstoque, transacaoNoEstoque, limpaEstoque } from "./estoque";
+//main.js 
 
-const olJoao = document.querySelector("#Joao");
-const olMaria = document.querySelector("#Maria");
+import { getEstoque, transacao } from "./estoque.js"
 
 document.entrada.addEventListener('submit', leFormulario);
+//leFormulario();
 
-document.addEventListener('DOMContentLoaded' , () => {
-    document.getElementById('buttonLimpaLista').addEventListener('click', () => {
-        limpaEstoque();
-        atualizaTela();
-    });
-});
+const olJoao = document.querySelector("#olJoao");
+const olMaria = document.querySelector("#olMaria");
 
 atualizaTela();
 
-function leFormulario(event){
-    event.preventDefault(event);
-    const quantidade = document.entrada.quantidade.valueAsNumber;
+function leFormulario(event) {
+    event.preventDefault();
     const fruta = document.entrada.fruta.value;
+    const quantidade = document.entrada.quantidade.valueAsNumber;
     const origem = document.entrada.origem.value;
     const destino = document.entrada.destino.value;
 
-    console.log(`${origem} doa ${quantidade} ${fruta} para ${destino}`);
+    console.log(`Solicitado: ${origem} doa ${quantidade} ${fruta} para ${destino}`);
+    //document.entrada.submit();
 
-    transacaoNoEstoque(origem, destino, fruta, quantidade);
-
+    transacao(origem, destino, quantidade, fruta);
     atualizaTela();
-}
-
-function preencheLista(lista, estoqueDaPessoa){
-    lista.textContent ="";
-    for (let i = 0; i < estoqueDaPessoa.length; i ++){
-        const monte = estoqueDaPessoa[i];
-        const li = document.createElement('li');
-        li.textContent = `${monte.tipo}: ${monte.quantidade}`;
-        lista.appendChild(li);
-    }
 }
 
 function atualizaTela(){
     const estoque = getEstoque();
+    preencheListaPessoa(estoque['joao'], olJoao);
+    preencheListaPessoa(estoque['maria'], olMaria);
+}
 
-    olJoao.innerHTML = "";
-    olMaria.innerHTML = "";
-
-    preencheLista(olJoao, estoque.joao);
-    preencheLista(olMaria, estoque.maria);
+export function preencheListaPessoa(pessoa, lista){
+    lista.innerHTML = "";
+    for(let i = 0; i < pessoa.length; i++){
+        const monte = pessoa[i];
+        const eLi = document.createElement('li');
+        eLi.innerText = `${monte.tipo}: ${monte.qtd}`;
+        lista.append(eLi);
+    }
 }
