@@ -14,7 +14,7 @@ export function limpaEstoque()
     estoque = {};
 }
 
-export function transacao(origem, destino, quantidade, fruta){
+export function transacaoNoEstoque(origem, destino, tipo, quantidade){
     if(origem === destino){
         return;
     }
@@ -22,6 +22,16 @@ export function transacao(origem, destino, quantidade, fruta){
     if(quantidade <= 0){
         return;
     }
+
+    if(origem !== "pomar" && !estoque[origem]) 
+    {
+        estoque[origem] = [];
+    }  
+  
+    if(destino !== "pomar" && !estoque[destino]) 
+    {
+        estoque[destino] = [];
+    }  
   
     if(origem === "pomar"){
         dePomarParaPessoa(destino, quantidade, fruta);
