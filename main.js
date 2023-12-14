@@ -38,13 +38,16 @@ function atualizaTela(){
 
     document.entrada.fruta.value = "maca";
     document.entrada.quantidade.value = 1;
-    
+
     preencheListaPessoa(estoque['joao'], olJoao);
     preencheListaPessoa(estoque['maria'], olMaria);
 }
 
-export function preencheListaPessoa(pessoa, lista){
+function preencheListaPessoa(pessoa, lista){
     lista.innerHTML = "";
+
+    if(Array.isArray(pessoa)) 
+    
     for(let i = 0; i < pessoa.length; i++){
         const monte = pessoa[i];
         const eLi = document.createElement('li');
