@@ -20,7 +20,7 @@ function leFormulario(event) {
     console.log(`Solicitado: ${origem} doa ${quantidade} ${fruta} para ${destino}`);
     //document.entrada.submit();
 
-    transacao(origem, destino, quantidade, fruta);
+    transacaoNoEstoque(origem, destino, quantidade, fruta);
     atualizaTela();
 }
 
