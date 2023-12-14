@@ -1,12 +1,12 @@
 //main.js 
 
-import { getEstoque, transacao } from "./estoque.js"
+import { getEstoque, limpaEstoque, transacaoNoEstoque } from "./estoque.js"
 
 document.entrada.addEventListener('submit', leFormulario);
 //leFormulario();
 
-const olJoao = document.querySelector("#olJoao");
-const olMaria = document.querySelector("#olMaria");
+const olJoao = document.querySelector("#joao");
+const olMaria = document.querySelector("#maria");
 
 atualizaTela();
 
