@@ -9,6 +9,11 @@ export function getEstoque(){
     return structuredClone(estoque);
 }
 
+export function limpaEstoque() 
+{
+    estoque = {};
+}
+
 export function transacao(origem, destino, quantidade, fruta){
     if(origem === destino){
         return;
