@@ -24,6 +24,15 @@ function leFormulario(event) {
     atualizaTela();
 }
 
+document.addEventListener('DOMContentLoaded', () => 
+{
+    document.getElementById('botaoLimparLista').addEventListener('click', () => 
+    {
+        limpaEstoque();
+        atualizaTela();
+    });
+});
+
 function atualizaTela(){
     const estoque = getEstoque();
     preencheListaPessoa(estoque['joao'], olJoao);
