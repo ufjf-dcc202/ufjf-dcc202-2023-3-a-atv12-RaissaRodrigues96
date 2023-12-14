@@ -33,13 +33,31 @@ export function transacaoNoEstoque(origem, destino, tipo, quantidade){
         estoque[destino] = [];
     }  
   
-    if(origem === "pomar"){
-        dePomarParaPessoa(destino, quantidade, fruta);
-        
-    }
-
     if(destino === "pomar"){
-        dePessoaParaPomar(origem, quantidade, fruta);
+      const itemEncontrado = estoque[origem].find(item => item.tipo === tipo);
+
+      if(itemEncontrado) 
+        {
+            itemEncontrado.quantidade = Math.max(0, itemEncontrado.quantidade - quantidade);
+        }
+    
+        return;
+    }  
+
+    if(origem === "pomar"){
+      const itemEncontrado = estoque[destino].find(item => item.tipo === tipo);
+    
+      if(itemEncontrado)
+      {
+          itemEncontrado.quantidade += quantidade;
+      }else
+      {
+          estoque[destino].push({tipo, quantidade});
+      }
+      
+      return;
+  }
+        
     }
 }
 
