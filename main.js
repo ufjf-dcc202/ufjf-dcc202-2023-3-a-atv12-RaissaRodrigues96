@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () =>
 
 function atualizaTela(){
     const estoque = getEstoque();
+
+    document.entrada.fruta.value = "maca";
+    document.entrada.quantidade.value = 1;
+    
     preencheListaPessoa(estoque['joao'], olJoao);
     preencheListaPessoa(estoque['maria'], olMaria);
 }
