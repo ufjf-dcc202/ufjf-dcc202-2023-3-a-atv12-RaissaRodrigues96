@@ -1,6 +1,6 @@
 //main.js 
 
-import { getEstoque, limpaEstoque, transacaoNoEstoque } from "./estoque.js"
+import { getEstoque, limpaEstoque,  transacaoNoEstoque } from "./estoque.js"
 
 document.entrada.addEventListener('submit', leFormulario);
 //leFormulario();
@@ -24,10 +24,8 @@ function leFormulario(event) {
     atualizaTela();
 }
 
-document.addEventListener('DOMContentLoaded', () => 
-{
-    document.getElementById('botaoLimparLista').addEventListener('click', () => 
-    {
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('botaoLimparLista').addEventListener('click', () => {
         limpaEstoque();
         atualizaTela();
     });
@@ -44,7 +42,7 @@ function atualizaTela(){
 }
 
 function preencheListaPessoa(pessoa, lista){
-    lista.innerHTML = "";
+    lista.innerHTML = " ";
 
     if(Array.isArray(pessoa)) 
 

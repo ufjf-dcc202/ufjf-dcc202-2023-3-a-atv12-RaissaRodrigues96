@@ -15,14 +15,10 @@ export function limpaEstoque()
 }
 
 export function transacaoNoEstoque(origem, destino, tipo, quantidade){
-    if(origem === destino){
+    if(origem === destino || quantidade <= 0 ){
         return;
     }
   
-    if(quantidade <= 0){
-        return;
-    }
-
     if(origem !== "pomar" && !estoque[origem]) 
     {
         estoque[origem] = [];
